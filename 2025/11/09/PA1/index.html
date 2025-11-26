@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>PA1 | Illunight的收藏品</title><meta name="author" content="Illunight"><meta name="copyright" content="Illunight"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="朋友供稿，是南京大学计算机系统基础的小型项目(PA)第一部分，也就是PA1。 RTFSC框架初探NEMU由四部分构成：monitor, CPU, memory, 设备monitor负责和Linux交互，调试的功能 kconfig这一块是简单讲解 kconfig 的作用。 在大型项目中，有很多可配置选项，配置选项之间会有依赖和关联。比如我们玩的游戏设置：  图形质量：(高 &#x2F; 低) 光线追踪：(开">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>PA1 | Illunight的收藏品</title><meta name="author" content="Illunight"><meta name="copyright" content="Illunight"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="朋友供稿，是南京大学计算机系统基础的小型项目(PA)第一部分，也就是PA1。 RTFSC 框架初探 NEMU由四部分构成：monitor, CPU, memory, 设备 monitor负责和Linux交互，调试的功能 kconfig 这一块是简单讲解 kconfig 的作用。 在大型项目中，有很多可配置选项，配置选项之间会有依赖和关联。比如我们玩的游戏设置：  图形质量：(高 &#x2F; 低) 光线追踪">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PA1">
 <meta property="og:url" content="https://xelinquency.github.io/2025/11/09/PA1/index.html">
 <meta property="og:site_name" content="Illunight的收藏品">
-<meta property="og:description" content="朋友供稿，是南京大学计算机系统基础的小型项目(PA)第一部分，也就是PA1。 RTFSC框架初探NEMU由四部分构成：monitor, CPU, memory, 设备monitor负责和Linux交互，调试的功能 kconfig这一块是简单讲解 kconfig 的作用。 在大型项目中，有很多可配置选项，配置选项之间会有依赖和关联。比如我们玩的游戏设置：  图形质量：(高 &#x2F; 低) 光线追踪：(开">
+<meta property="og:description" content="朋友供稿，是南京大学计算机系统基础的小型项目(PA)第一部分，也就是PA1。 RTFSC 框架初探 NEMU由四部分构成：monitor, CPU, memory, 设备 monitor负责和Linux交互，调试的功能 kconfig 这一块是简单讲解 kconfig 的作用。 在大型项目中，有很多可配置选项，配置选项之间会有依赖和关联。比如我们玩的游戏设置：  图形质量：(高 &#x2F; 低) 光线追踪">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://xelinquency.github.io/img/404.jpg">
 <meta property="article:published_time" content="2025-11-09T15:35:04.000Z">
@@ -161,42 +161,53 @@
   isToc: true,
   pageType: 'post'
 }</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/icon.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/%E7%AC%94%E8%AE%B0/"><i class="fa-fw fas fa-pen-nib"></i><span> 笔记</span></a></div><div class="menus_item"><a class="site-page" href="/friends"><i class="fa-fw fas fa-users-line"></i><span> 友链</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/game/"><i class="fa-fw fas fa-paw"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/special/"><i class="fa-fw fas fa-clipboard-question"></i><span> ???</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/404.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/img/favicon.ico" alt="Logo"><span class="site-name">Illunight的收藏品</span></a><a class="nav-page-title" href="/"><span class="site-name">PA1</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/%E7%AC%94%E8%AE%B0/"><i class="fa-fw fas fa-pen-nib"></i><span> 笔记</span></a></div><div class="menus_item"><a class="site-page" href="/friends"><i class="fa-fw fas fa-users-line"></i><span> 友链</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/game/"><i class="fa-fw fas fa-paw"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/special/"><i class="fa-fw fas fa-clipboard-question"></i><span> ???</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">PA1</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-11-09T15:35:04.000Z" title="发表于 2025-11-09 23:35:04">2025-11-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-11-20T16:37:28.532Z" title="更新于 2025-11-21 00:37:28">2025-11-21</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">1.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>朋友供稿，是南京大学计算机系统基础的小型项目(PA)第一部分，也就是PA1。</p>
-<h2 id="RTFSC"><a href="#RTFSC" class="headerlink" title="RTFSC"></a>RTFSC</h2><h3 id="框架初探"><a href="#框架初探" class="headerlink" title="框架初探"></a>框架初探</h3><p>NEMU由四部分构成：<strong>monitor, CPU, memory, 设备</strong><br>monitor负责和Linux交互，调试的功能</p>
-<h3 id="kconfig"><a href="#kconfig" class="headerlink" title="kconfig"></a>kconfig</h3><p>这一块是简单讲解 kconfig 的作用。</p>
+<h2 id="RTFSC">RTFSC</h2>
+<h3 id="框架初探">框架初探</h3>
+<p>NEMU由四部分构成：<strong>monitor, CPU, memory, 设备</strong><br>
+monitor负责和Linux交互，调试的功能</p>
+<h3 id="kconfig">kconfig</h3>
+<p>这一块是简单讲解 kconfig 的作用。</p>
 <p>在大型项目中，有很多可配置选项，配置选项之间会有依赖和关联。比如我们玩的游戏设置：</p>
 <ul>
 <li><strong>图形质量</strong>：(高 / 低)</li>
-<li><strong>光线追踪</strong>：(开 / 关) —— <strong>这个选项只有在“高”画质时才能开启</strong>。<br>而这些设置，在代码里面通常要用<strong>宏</strong>来实现，比如：</li>
+<li><strong>光线追踪</strong>：(开 / 关) —— <strong>这个选项只有在“高”画质时才能开启</strong>。<br>
+而这些设置，在代码里面通常要用<strong>宏</strong>来实现，比如：</li>
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// config.h</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_DEBUG 1</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_WELCOME_MSG <span class="string">&quot;Welcome to NEMU!&quot;</span></span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>如果手动配置这些<strong>配置文件宏</strong>，会非常麻烦且容易出错。因此引入新的软件 <strong>kconfig</strong>，具体描述见讲义。<br>nemu的步骤 <code>make menuconfig</code> ：</p>
+<p>如果手动配置这些<strong>配置文件宏</strong>，会非常麻烦且容易出错。因此引入新的软件 <strong>kconfig</strong>，具体描述见讲义。<br>
+nemu的步骤 <code>make menuconfig</code> ：</p>
 <ol>
-<li><p>定义 (Kconfig)</p>
+<li>
+<p>定义 (Kconfig)</p>
 <ul>
 <li>开发者在 <code>nemu/Kconfig</code> 文件中<strong>定义</strong>了所有可配置的选项。</li>
 <li>包含了各种选项和各种依赖。</li>
 </ul>
 </li>
-<li><p>交互 (<code>mconf</code>)</p>
+<li>
+<p>交互 (<code>mconf</code>)</p>
 <ul>
 <li>运行 <code>make menuconfig</code>，<code>make</code> 会启动 <code>mconf</code> 程序。</li>
 <li><code>mconf</code> 读取 <code>nemu/Kconfig</code>，生成<strong>交互式菜单</strong>。</li>
 </ul>
 </li>
-<li><p>保存 (<code>.config</code>)    </p>
+<li>
+<p>保存 (<code>.config</code>)</p>
 <ul>
 <li>在菜单中进行<strong>交互设置</strong>（启用 <code>CONFIG_DEBUG</code>，关闭 <code>CONFIG_CACHE</code> 等）。</li>
 <li>退出保存时，<code>mconf</code> 将选择结果写入 <code>nemu/.config</code> 文件。</li>
 </ul>
 </li>
-<li><p>翻译 (<code>conf</code>)</p>
+<li>
+<p>翻译 (<code>conf</code>)</p>
 <ul>
 <li><code>make</code> 继续执行，自动运行 <code>conf</code> 程序。</li>
 <li><code>conf</code> <strong>读取</strong> <code>nemu/Kconfig</code>（为了了解所有选项的默认值和类型）和 <code>nemu/.config</code>（为了了解您的选择）。</li>
 <li><code>conf</code> 翻译这些设置，生成两个核心文件。</li>
 </ul>
 </li>
-<li><p>生成 (autoconf.h / auto.conf)</p>
+<li>
+<p>生成 (autoconf.h / auto.conf)</p>
 <ul>
 <li><code>conf</code> 生成 <code>nemu/include/generated/autoconf.h</code>，里面是给 <strong>C 代码</strong>用的<strong>宏</strong>。</li>
 <li><code>conf</code> 生成 <code>nemu/include/config/auto.conf</code>，里面是给 <strong>Makefile</strong> 用的<strong>变量</strong>。</li>
@@ -205,39 +216,46 @@
 </ol>
 <p>例如：</p>
 <ol>
-<li><p><code>nemu/Kconfig</code> :</p>
+<li>
+<p><code>nemu/Kconfig</code> :</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 定义一个布尔型(bool)选项，叫 DEBUG</span><br><span class="line">config DEBUG</span><br><span class="line">    bool &quot;Enable debugging features&quot;</span><br><span class="line">    default n  # 默认不开启</span><br><span class="line">    help</span><br><span class="line">      This enables extra printf messages for debugging.</span><br><span class="line"></span><br><span class="line"># 定义一个字符串(string)选项，叫 WELCOME_MSG</span><br><span class="line">config WELCOME_MSG</span><br><span class="line">    string &quot;The welcome message to show on boot&quot;</span><br><span class="line">    depends on DEBUG   # 关键：这个选项只在 DEBUG=y 时才出现！</span><br><span class="line">    default &quot;Hello&quot;</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p><strong><code>config DEBUG</code></strong>: 定义了一个叫 <code>DEBUG</code> 的选项，它是个开关（<code>bool</code>）。</p>
+<li>
+<p><strong><code>config DEBUG</code></strong>: 定义了一个叫 <code>DEBUG</code> 的选项，它是个开关（<code>bool</code>）。</p>
 </li>
-<li><p><strong><code>config WELCOME_MSG</code></strong>: 定义了一个叫 <code>WELCOME_MSG</code> 的选项，它是个字符串（<code>string</code>）。</p>
+<li>
+<p><strong><code>config WELCOME_MSG</code></strong>: 定义了一个叫 <code>WELCOME_MSG</code> 的选项，它是个字符串（<code>string</code>）。</p>
 </li>
-<li><p><strong><code>depends on DEBUG</code></strong>: 建立<strong>依赖关系</strong>。这说明：只有当 <code>DEBUG</code> 被选中后，<code>WELCOME_MSG</code> 这个选项才允许被设置。</p>
+<li>
+<p><strong><code>depends on DEBUG</code></strong>: 建立<strong>依赖关系</strong>。这说明：只有当 <code>DEBUG</code> 被选中后，<code>WELCOME_MSG</code> 这个选项才允许被设置。</p>
 </li>
 </ul>
 </li>
-</ol>
-<ol>
-<li><p><code>mconf</code> :</p>
+<li>
+<p><code>mconf</code> :</p>
 <ul>
-<li><p>读取 <code>nemu/Kconfig</code>，显示一个菜单：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ ] Enable debugging features</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>选中：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[*] Enable debugging features</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>因为 <code>depends on DEBUG</code> 被满足了，<code>mconf</code> 显示了新选项：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[*] Enable debugging features</span><br><span class="line">    (&quot;Hello&quot;) The welcome message to show on boot</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改了欢迎语为 <code>&quot;Welcome to NEMU!&quot;</code>。</p>
-</li>
+<li>读取 <code>nemu/Kconfig</code>，显示一个菜单：</li>
+</ul>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ ] Enable debugging features</span><br></pre></td></tr></table></figure>
+<ul>
+<li>选中：</li>
+</ul>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[*] Enable debugging features</span><br></pre></td></tr></table></figure>
+<ul>
+<li>因为 <code>depends on DEBUG</code> 被满足了，<code>mconf</code> 显示了新选项：</li>
+</ul>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[*] Enable debugging features</span><br><span class="line">    (&quot;Hello&quot;) The welcome message to show on boot</span><br></pre></td></tr></table></figure>
+<ul>
+<li>修改了欢迎语为 <code>&quot;Welcome to NEMU!&quot;</code>。</li>
 <li>保存并退出，把结果写入 <code>nemu/.config</code> 文件。</li>
 </ul>
 </li>
-<li><p><code>nemu/.config</code> (mconf 的输出):</p>
+<li>
+<p><code>nemu/.config</code> (mconf 的输出):</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#</span><br><span class="line"># Automatically generated file; DO NOT EDIT.</span><br><span class="line">#</span><br><span class="line">CONFIG_DEBUG=y</span><br><span class="line">CONFIG_WELCOME_MSG=&quot;Welcome to NEMU!&quot;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><code>conf</code> 程序（翻译 <code>.config</code> ）：</p>
+<li>
+<p><code>conf</code> 程序（翻译 <code>.config</code> ）：</p>
 <ul>
 <li>生成给 C 代码的 <code>autoconf.h</code></li>
 </ul>
@@ -247,11 +265,13 @@
 </ul>
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># nemu/include/config/auto.conf</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Automatically generated make config: DO NOT EDIT</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">CONFIG_DEBUG=y</span><br><span class="line">CONFIG_WELCOME_MSG=<span class="string">&quot;Welcome to NEMU!&quot;</span></span><br><span class="line"></span><br><span class="line">/* (注意：这里的内容和 .config 基本一样，格式是 make 变量) */</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>项目文件：</p>
+<li>
+<p>项目文件：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="comment">// 1. 包含 Kconfig 生成的 C 语言宏</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;generated/autoconf.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 使用布尔型配置 (DEBUG) 来控制代码</span></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> CONFIG_DEBUG</span></span><br><span class="line">    <span class="comment">// 这部分代码只有在 `make menuconfig` 中</span></span><br><span class="line">    <span class="comment">// 勾选了 DEBUG 时才会被编译进去</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Debug mode is ON.\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 3. 使用字符串配置 (WELCOME_MSG)</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Message: %s\n&quot;</span>, CONFIG_WELCOME_MSG);</span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line">    <span class="comment">// 如果没勾选 DEBUG，则只编译这部分</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Release mode.\n&quot;</span>);</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<div class="note orange icon-padding flat"><i class="note-icon fa-solid fa-circle-exclamation"></i><p><strong>游戏的配置</strong><br>实际上游戏是<strong>运行时 (Run-Time) 配置</strong>，一些软件比如OS内核是<strong>编译时 (Compile-Time) 配置</strong>：</p>
+<div class="note orange icon-padding flat"><i class="note-icon fa-solid fa-circle-exclamation"></i><p><strong>游戏的配置</strong><br>
+实际上游戏是<strong>运行时 (Run-Time) 配置</strong>，一些软件比如OS内核是<strong>编译时 (Compile-Time) 配置</strong>：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// (游戏启动时从 settings.ini 读取设置)</span></span><br><span class="line"><span class="type">int</span> graphics_quality = read_setting(<span class="string">&quot;quality&quot;</span>); <span class="comment">// 假设读到 3 (高)</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">draw_game_frame</span><span class="params">()</span> &#123;</span><br><span class="line"><span class="keyword">if</span> (graphics_quality == <span class="number">3</span>) &#123;</span><br><span class="line">  draw_high_quality_shadows();</span><br><span class="line">  draw_raytracing();</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (graphics_quality == <span class="number">2</span>) &#123;</span><br><span class="line">  draw_medium_quality_shadows();</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  draw_low_quality_shadows();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>内核内的软件需要<strong>性能、体积、稳定</strong>，如果采用上述方法，会带来几个问题：</p>
 <ul>
@@ -259,23 +279,28 @@
 <li>编译之后体积巨大，比如在服务器上的系统完全不需要蓝牙功能，编译进去造成冗余。</li>
 </ul>
 </div>
-<h3 id="Makefile"><a href="#Makefile" class="headerlink" title="Makefile"></a>Makefile</h3><h4 id="filelist"><a href="#filelist" class="headerlink" title="filelist"></a>filelist</h4><p>用来管理需要编译的源文件，使用方法如下：</p>
+<h3 id="Makefile">Makefile</h3>
+<h4 id="filelist">filelist</h4>
+<p>用来管理需要编译的源文件，使用方法如下：</p>
 <ol>
-<li>在 kconfig 步骤生成 Make 变量，例如：<ul>
+<li>在 kconfig 步骤生成 Make 变量，例如：
+<ul>
 <li>如果选中了 <code>TARGET_AM</code>，它会生成：<code>CONFIG_TARGET_AM=y</code></li>
 <li>如果没选中，它会生成：<code>CONFIG_TARGET_AM=n</code> (或者干脆不定义)</li>
 </ul>
 </li>
-<li>在 <code>filelist.mk</code> 中维护四个变量：<ul>
-<li><code>SRCS-y</code> - 参与编译的源文件的候选集合</li>
-<li><code>SRCS-BLACKLIST-y</code> - 不参与编译的源文件的黑名单集合</li>
-<li><code>DIRS-y</code> - 参与编译的目录集合, 该目录下的所有文件都会被加入到<code>SRCS-y</code>中</li>
-<li><code>DIRS-BLACKLIST-y</code> - 不参与编译的目录集合, 该目录下的所有文件都会被加入到<code>SRCS-BLACKLIST-y</code>中</li>
+<li>在 <code>filelist.mk</code> 中维护四个变量：
+<ul>
+<li><code>SRCS-y</code> - 参与编译的源文件的候选集合</li>
+<li><code>SRCS-BLACKLIST-y</code> - 不参与编译的源文件的黑名单集合</li>
+<li><code>DIRS-y</code> - 参与编译的目录集合, 该目录下的所有文件都会被加入到<code>SRCS-y</code>中</li>
+<li><code>DIRS-BLACKLIST-y</code> - 不参与编译的目录集合, 该目录下的所有文件都会被加入到<code>SRCS-BLACKLIST-y</code>中</li>
 </ul>
 </li>
 <li>实际使用过程，定义的变量为 <code>DIRS-BLACKLIST-$(CONFIG_TARGET_AM)</code> ，make 程序读取过程中自动展开。</li>
 </ol>
-<h4 id="编译和链接"><a href="#编译和链接" class="headerlink" title="编译和链接"></a>编译和链接</h4><p>Makefile 基本规则：</p>
+<h4 id="编译和链接">编译和链接</h4>
+<p>Makefile 基本规则：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">目标 (Target): 依赖 (Prerequisites)</span><br><span class="line">&lt;TAB&gt; 命令 (Command)</span><br></pre></td></tr></table></figure>
 <ul>
 <li>目标: 想<strong>要生成的文件</strong>，比如可执行文件 <code>program</code> 或目标文件 <code>main.o</code>。</li>
@@ -286,24 +311,29 @@
 <p>详细拆解编译规则：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(OBJ_DIR)/%.o: %.c</span><br><span class="line">  @echo + CC $&lt;</span><br><span class="line">  @mkdir -p $(dir $@)</span><br><span class="line">  @$(CC) $(CFLAGS) -c -o $@ $&lt;</span><br><span class="line">  $(call call_fixdep, $(@:.o=.d), $@)</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>规则：<code>$(OBJ_DIR)/%.o: %.c</code></p>
+<li>
+<p>规则：<code>$(OBJ_DIR)/%.o: %.c</code></p>
 <ul>
 <li><code>$(OBJ_DIR)</code> 在初始化已经自动设定</li>
 <li>需要生成 <code>$(OBJ_DIR)/%.o</code> 文件（例如 <code>build/src/main.o</code>），需要同名的<code>.c</code> 文件例如 （<code>src/main.c</code>）。</li>
 <li><code>%</code> 是一个通配符，它会匹配两个文件名中相同的部分（既 <code>src/main</code>）。</li>
 </ul>
 </li>
-<li><p>自动变量：</p>
+<li>
+<p>自动变量：</p>
 <ul>
 <li><code>$@</code>：目标 - Target</li>
 <li><code>$&lt;</code>：第一个依赖 - First Prerequisite</li>
 </ul>
 </li>
-<li><p>命令1：<code>@echo + CC $&lt;</code></p>
+<li>
+<p>命令1：<code>@echo + CC $&lt;</code></p>
 <ul>
-<li><code>@</code> (静音符)：只执行不打印<ul>
+<li><code>@</code> (静音符)：只执行不打印
+<ul>
 <li>如果没有 <code>@</code>，<code>make</code> 会先打印 <code>echo + CC src/utils/timer.c</code>，然后再执行它，导致输出 <code>+ CC src/utils/timer.c</code>，非常啰嗦。</li>
-<li><code>+ CC $&lt;</code> (打印的内容):<ul>
+<li><code>+ CC $&lt;</code> (打印的内容):
+<ul>
 <li><code>+ CC</code> 是一个固定的字符串，让输出更美观。</li>
 <li><code>$&lt;</code> 是一个第一个依赖（例如在构建 <code>timer.o</code> 时，<code>$&lt;</code> 的值就是 <code>src/utils/timer.c</code>）。</li>
 </ul>
@@ -312,10 +342,13 @@
 </li>
 </ul>
 </li>
-<li><p>命令2：<code>@mkdir -p $(dir $@)</code></p>
+<li>
+<p>命令2：<code>@mkdir -p $(dir $@)</code></p>
 <ul>
-<li><code>$(dir $@)</code> (要创建的目录):<ul>
-<li><strong><code>$@</code></strong> 是目标名，例如 <code>build/obj/src/utils/timer.o</code>。<ul>
+<li><code>$(dir $@)</code> (要创建的目录):
+<ul>
+<li><strong><code>$@</code></strong> 是目标名，例如 <code>build/obj/src/utils/timer.o</code>。
+<ul>
 <li><strong><code>$(dir ...)</code></strong> 是一个 <code>make</code> 内置函数，用于提取路径中的目录部分。例如 <code>$(dir build/obj/src/utils/timer.o)</code> 的计算结果是 <code>build/obj/src/utils/</code>。</li>
 </ul>
 </li>
@@ -323,12 +356,14 @@
 </li>
 </ul>
 </li>
-<li><p>命令3：<code>@$(CC) $(CFLAGS) -c -o $@ $&lt;</code></p>
+<li>
+<p>命令3：<code>@$(CC) $(CFLAGS) -c -o $@ $&lt;</code></p>
 <ul>
 <li><code>$(CC)</code>：代表 C 编译器，一般是 <code>gcc</code>。</li>
 <li><code>$(CFLAGS)</code>：代表所有编译选项（C Flags），例如 <code>-O2 -Wall -Werror -I...</code> 等。</li>
 <li><code>-c</code>：编译器选项，告诉 <code>gcc</code>：“只编译，不链接”。即，把 <code>.c</code> 文件编译成 <code>.o</code> 目标文件。</li>
-<li><strong><code>-o $@</code>:</strong><ul>
+<li><strong><code>-o $@</code>:</strong>
+<ul>
 <li><code>-o</code> 是编译器的输出文件选项。</li>
 <li><strong><code>$@</code></strong> 在这里是输出文件名，例如 <code>-o build/obj/src/utils/timer.o</code></li>
 </ul>
@@ -336,7 +371,8 @@
 <li><code>$&lt;</code>：在这里是输入源文件，例如 <code>src/utils/timer.c</code></li>
 </ul>
 </li>
-<li><p>命令4：<code>$(call call_fixdep, $(@:.o=.d), $@)</code></p>
+<li>
+<p>命令4：<code>$(call call_fixdep, $(@:.o=.d), $@)</code></p>
 <ul>
 <li>修复优化依赖关系</li>
 </ul>
