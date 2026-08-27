@@ -2599,7 +2599,7 @@ figure.highlight pre .javascript .function {
   overflow: hidden;
   margin: 15px 7px;
   width: calc(100% / 3 - 15px);
-  height: 90px;
+  height: 112px;
   line-height: 17px;
   -webkit-transform: translateZ(0);
   border-radius: 8px;
@@ -2648,6 +2648,8 @@ figure.highlight pre .javascript .function {
   transform: scale(1);
 }
 .container .flink .flink-list > .flink-list-item a {
+  display: block;
+  height: 100%;
   color: var(--font-color);
   text-decoration: none;
 }
@@ -2687,6 +2689,47 @@ figure.highlight pre .javascript .function {
   padding: 16px 10px 16px 0;
   height: 50px;
   font-size: 0.93em;
+}
+.container .flink .flink-status-bars {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  left: 12px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  gap: 3px;
+  height: 6px;
+}
+.container .flink .flink-status-bar {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1 1 0;
+  -ms-flex: 1 1 0;
+  flex: 1 1 0;
+  min-width: 8px;
+  border-radius: 999px;
+  background: rgba(133,133,133,0.24);
+}
+.container .flink .flink-status-bar-up {
+  background: #22c55e;
+  -webkit-box-shadow: 0 0 0 1px rgba(34,197,94,0.12);
+  box-shadow: 0 0 0 1px rgba(34,197,94,0.12);
+}
+.container .flink .flink-status-bar-warn {
+  background: #f59e0b;
+  -webkit-box-shadow: 0 0 0 1px rgba(245,158,11,0.14);
+  box-shadow: 0 0 0 1px rgba(245,158,11,0.14);
+}
+.container .flink .flink-status-bar-down {
+  background: #ef4444;
+  -webkit-box-shadow: 0 0 0 1px rgba(239,68,68,0.14);
+  box-shadow: 0 0 0 1px rgba(239,68,68,0.14);
 }
 .container .flink .flink-name {
   margin-bottom: 5px;
