@@ -29,6 +29,11 @@
   opacity: 0.78;
 }
 
+body:not(.teldrive-portal-open) [data-teldrive-hidden],
+body.teldrive-portal-open [data-teldrive-shown] {
+  display: none;
+}
+
 #card-info-btn[aria-controls="teldrive-portal"] {
   cursor: pointer;
 }
