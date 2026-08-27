@@ -1,0 +1,40 @@
+#recent-posts .random-post-item {
+  isolation: isolate;
+}
+
+#recent-posts .random-post-cover .post-bg {
+  display: block;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  cursor: pointer;
+}
+
+#recent-posts .random-post-cover .post-bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#recent-posts .random-post-icon {
+  margin-right: 0.55rem;
+  color: #49b1f5;
+}
+
+#recent-posts .random-post-trigger:focus-visible {
+  outline: 3px solid #49b1f5;
+  outline-offset: 4px;
+}
+
+#recent-posts .random-post-item .content {
+  color: var(--card-meta);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #recent-posts .random-post-cover .post-bg,
+  #recent-posts .random-post-cover .post-bg img {
+    transition: none !important;
+  }
+}
